@@ -45,6 +45,7 @@ a {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 button,
@@ -1534,9 +1535,9 @@ button {
   }
 
   .hero-frame img {
-    width: 180%;
-    max-width: none;
-    transform: translateX(-18%);
+    width: 100%;
+    max-width: 100%;
+    transform: none;
   }
 
   .hero-frame figcaption {
@@ -1596,12 +1597,12 @@ button {
 
   .paper-figure {
     padding: 7px;
-    overflow-x: auto;
+    overflow: hidden;
   }
 
   .paper-figure img {
-    width: 950px;
-    max-width: none;
+    width: 100%;
+    max-width: 100%;
   }
 
   .paper-figure figcaption {
@@ -1624,12 +1625,12 @@ button {
 
   .pipeline-figure {
     padding: 7px;
-    overflow-x: auto;
+    overflow: hidden;
   }
 
   .pipeline-figure img {
-    width: 900px;
-    max-width: none;
+    width: 100%;
+    max-width: 100%;
   }
 
   .capability-strip {
@@ -1673,12 +1674,12 @@ button {
   }
 
   .application-figure {
-    overflow-x: auto;
+    overflow: hidden;
   }
 
   .application-figure img {
-    width: 920px;
-    max-width: none;
+    width: 100%;
+    max-width: 100%;
   }
 
   .citation-code-wrap pre {
