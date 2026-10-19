@@ -383,50 +383,55 @@
               </p>
             </div>
 
-            <nav class="case-switcher" aria-label="Camera and object motion examples">
-              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true">Case 01</button>
-              <button type="button" data-demo-case="1" aria-pressed="false">Case 02</button>
-              <button type="button" data-demo-case="2" aria-pressed="false">Case 03</button>
-              <button type="button" data-demo-case="3" aria-pressed="false">Case 04</button>
+            <nav class="case-switcher case-switcher-primary" aria-label="Camera and object motion examples">
+              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true"><span>Case</span> 01</button>
+              <button type="button" data-demo-case="1" aria-pressed="false"><span>Case</span> 02</button>
+              <button type="button" data-demo-case="2" aria-pressed="false"><span>Case</span> 03</button>
+              <button type="button" data-demo-case="3" aria-pressed="false"><span>Case</span> 04</button>
             </nav>
 
-            <div class="demo-context">
-              <figure class="reference-card">
-                <img data-demo-reference src="assets/demos/camera-object/01/reference.jpg" alt="Reference image for camera and object motion example" width="1200" height="675">
-                <figcaption>Reference image</figcaption>
-              </figure>
-              <div class="case-readout">
-                <span>Selected example</span>
-                <strong data-demo-case-title>Case 01</strong>
+            <div class="input-stage input-stage-compact input-stage-count-3">
+              <div class="stage-heading input-stage-heading">
+                <span>Inputs</span>
+                <p>Control signals are provided to GTL only.</p>
               </div>
-            </div>
-
-            <div class="comparison-grid comparison-grid-two">
-              <figure class="result-card result-card-ours" data-demo-card="ours">
-                <figcaption class="media-label"><strong>Ours</strong><span>GTL · VACE-14B</span></figcaption>
-                <video class="demo-video" data-demo-media="ours" src="assets/demos/camera-object/01/ours.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-              </figure>
-              <figure class="result-card" data-demo-card="pac">
-                <figcaption class="media-label"><strong>PAC</strong><span>Baseline</span></figcaption>
-                <video class="demo-video" data-demo-media="pac" src="assets/demos/camera-object/01/pac.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-              </figure>
-            </div>
-
-            <div class="condition-panel">
-              <div class="condition-heading">
-                <div><span class="condition-dot"></span> Control signals for <strong>Ours</strong></div>
-                <p>World-space camera geometry and object-space 6D boxes are fused by GTL.</p>
-              </div>
-              <div class="condition-grid condition-grid-two">
-                <figure class="condition-card" data-demo-card="cameraCondition">
+              <div class="input-pair">
+                <figure class="input-card reference-card">
+                  <img data-demo-reference src="assets/demos/camera-object/01/reference.jpg" alt="Reference image for camera and object example 01" width="1200" height="675">
+                  <figcaption>Reference image</figcaption>
+                </figure>
+                <figure class="input-card condition-input" data-demo-card="cameraCondition">
                   <video class="demo-video" data-demo-media="cameraCondition" src="assets/demos/camera-object/01/camera_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-                  <figcaption><span>01</span> Camera condition</figcaption>
+                  <figcaption><span class="condition-dot"></span> Camera condition <em>GTL only</em></figcaption>
                 </figure>
-                <figure class="condition-card" data-demo-card="bboxCondition">
+                <figure class="input-card condition-input" data-demo-card="bboxCondition">
                   <video class="demo-video" data-demo-media="bboxCondition" src="assets/demos/camera-object/01/bbox_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-                  <figcaption><span>02</span> BBox condition</figcaption>
+                  <figcaption><span class="condition-dot"></span> BBox condition <em>GTL only</em></figcaption>
                 </figure>
               </div>
+            </div>
+
+            <div class="featured-result">
+              <div class="featured-result-heading">
+                <div><span>Selected result</span><strong data-featured-method>Ours</strong></div>
+                <span data-featured-meta>GTL · VACE-14B</span>
+              </div>
+              <video class="demo-video featured-result-video" data-featured-media="ours" src="assets/demos/camera-object/01/ours.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+            </div>
+
+            <div class="stage-heading result-rail-heading result-rail-heading-count-2">
+              <span>All methods</span>
+              <p>Select a playing result to bring it to the main screen.</p>
+            </div>
+            <div class="result-rail result-rail-count-2" aria-label="Camera and object result methods">
+              <button class="result-thumb is-active" type="button" data-demo-card="ours" data-method-select="ours" data-method-label="Ours" data-method-meta="GTL · VACE-14B" aria-pressed="true">
+                <span class="result-thumb-label"><strong>Ours</strong><em>GTL</em></span>
+                <video class="demo-video result-thumb-video" data-demo-media="ours" src="assets/demos/camera-object/01/ours.mp4" autoplay loop muted playsinline preload="metadata"></video>
+              </button>
+              <button class="result-thumb" type="button" data-demo-card="pac" data-method-select="pac" data-method-label="PAC" data-method-meta="Baseline" aria-pressed="false">
+                <span class="result-thumb-label"><strong>PAC</strong><em>Baseline</em></span>
+                <video class="demo-video result-thumb-video" data-demo-media="pac" src="assets/demos/camera-object/01/pac.mp4" autoplay loop muted playsinline preload="metadata"></video>
+              </button>
             </div>
           </article>
 
@@ -443,42 +448,53 @@
               </p>
             </div>
 
-            <nav class="case-switcher" aria-label="Depth-of-field examples">
-              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true">Case 01</button>
-              <button type="button" data-demo-case="1" aria-pressed="false">Case 02</button>
-              <button type="button" data-demo-case="2" aria-pressed="false">Case 03</button>
+            <nav class="case-switcher case-switcher-primary" aria-label="Depth-of-field examples">
+              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true"><span>Case</span> 01</button>
+              <button type="button" data-demo-case="1" aria-pressed="false"><span>Case</span> 02</button>
+              <button type="button" data-demo-case="2" aria-pressed="false"><span>Case</span> 03</button>
             </nav>
 
-            <div class="feature-stage">
-              <figure class="reference-card">
-                <img data-demo-reference src="assets/demos/bokeh/01/reference.jpg" alt="Reference image for depth-of-field example" width="1200" height="675">
-                <figcaption>Reference image</figcaption>
-              </figure>
-              <figure class="result-card result-card-ours feature-result" data-demo-card="ours">
-                <figcaption class="media-label"><strong>Ours</strong><span>GTL · VACE-14B</span></figcaption>
-                <video class="demo-video" data-demo-media="ours" src="assets/demos/bokeh/01/ours.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-              </figure>
+            <div class="input-stage input-stage-compact input-stage-count-4">
+              <div class="stage-heading input-stage-heading">
+                <span>Inputs</span>
+                <p>Control signals are provided to GTL only.</p>
+              </div>
+              <div class="input-pair">
+                <figure class="input-card reference-card">
+                  <img data-demo-reference src="assets/demos/bokeh/01/reference.jpg" alt="Reference image for depth-of-field example 01" width="1200" height="675">
+                  <figcaption>Reference image</figcaption>
+                </figure>
+                <figure class="input-card condition-input" data-demo-card="cameraCondition">
+                  <video class="demo-video" data-demo-media="cameraCondition" src="assets/demos/bokeh/01/camera_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span class="condition-dot"></span> Camera condition <em>GTL only</em></figcaption>
+                </figure>
+                <figure class="input-card condition-input" data-demo-card="bboxCondition">
+                  <video class="demo-video" data-demo-media="bboxCondition" src="assets/demos/bokeh/01/bbox_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span class="condition-dot"></span> BBox condition <em>GTL only</em></figcaption>
+                </figure>
+                <figure class="input-card condition-input" data-demo-card="bokehCondition">
+                  <video class="demo-video" data-demo-media="bokehCondition" src="assets/demos/bokeh/01/bokeh_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span class="condition-dot"></span> Bokeh condition <em>GTL only</em></figcaption>
+                </figure>
+              </div>
             </div>
 
-            <div class="condition-panel">
-              <div class="condition-heading">
-                <div><span class="condition-dot"></span> Control signals for <strong>Ours</strong></div>
-                <p>Focus is conditioned together with the camera and target geometry.</p>
+            <div class="featured-result">
+              <div class="featured-result-heading">
+                <div><span>Selected result</span><strong data-featured-method>Ours</strong></div>
+                <span data-featured-meta>GTL · VACE-14B</span>
               </div>
-              <div class="condition-grid condition-grid-three">
-                <figure class="condition-card" data-demo-card="cameraCondition">
-                  <video class="demo-video" data-demo-media="cameraCondition" src="assets/demos/bokeh/01/camera_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-                  <figcaption><span>01</span> Camera condition</figcaption>
-                </figure>
-                <figure class="condition-card" data-demo-card="bboxCondition">
-                  <video class="demo-video" data-demo-media="bboxCondition" src="assets/demos/bokeh/01/bbox_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-                  <figcaption><span>02</span> BBox condition</figcaption>
-                </figure>
-                <figure class="condition-card condition-card-accent" data-demo-card="bokehCondition">
-                  <video class="demo-video" data-demo-media="bokehCondition" src="assets/demos/bokeh/01/bokeh_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-                  <figcaption><span>03</span> Bokeh condition</figcaption>
-                </figure>
-              </div>
+              <video class="demo-video featured-result-video" data-featured-media="ours" src="assets/demos/bokeh/01/ours.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+            </div>
+
+            <div class="stage-heading result-rail-heading result-rail-heading-count-1">
+              <span>Result</span>
+            </div>
+            <div class="result-rail result-rail-count-1" aria-label="Depth-of-field result methods">
+              <button class="result-thumb is-active" type="button" data-demo-card="ours" data-method-select="ours" data-method-label="Ours" data-method-meta="GTL · VACE-14B" aria-pressed="true">
+                <span class="result-thumb-label"><strong>Ours</strong><em>GTL</em></span>
+                <video class="demo-video result-thumb-video" data-demo-media="ours" src="assets/demos/bokeh/01/ours.mp4" autoplay loop muted playsinline preload="metadata"></video>
+              </button>
             </div>
           </article>
 
@@ -495,37 +511,48 @@
               </p>
             </div>
 
-            <nav class="case-switcher" aria-label="Hitchcock zoom examples">
-              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true">Case 01</button>
-              <button type="button" data-demo-case="1" aria-pressed="false">Case 02</button>
+            <nav class="case-switcher case-switcher-primary" aria-label="Hitchcock zoom examples">
+              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true"><span>Case</span> 01</button>
+              <button type="button" data-demo-case="1" aria-pressed="false"><span>Case</span> 02</button>
             </nav>
 
-            <div class="feature-stage">
-              <figure class="reference-card">
-                <img data-demo-reference src="assets/demos/hitchcock/01/reference.jpg" alt="Reference image for Hitchcock zoom example" width="1200" height="675">
-                <figcaption>Reference image</figcaption>
-              </figure>
-              <figure class="result-card result-card-ours feature-result" data-demo-card="ours">
-                <figcaption class="media-label"><strong>Ours</strong><span>GTL · VACE-14B</span></figcaption>
-                <video class="demo-video" data-demo-media="ours" src="assets/demos/hitchcock/01/ours.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-              </figure>
+            <div class="input-stage input-stage-compact input-stage-count-3">
+              <div class="stage-heading input-stage-heading">
+                <span>Inputs</span>
+                <p>Control signals are provided to GTL only.</p>
+              </div>
+              <div class="input-pair">
+                <figure class="input-card reference-card">
+                  <img data-demo-reference src="assets/demos/hitchcock/01/reference.jpg" alt="Reference image for Hitchcock zoom example 01" width="1200" height="675">
+                  <figcaption>Reference image</figcaption>
+                </figure>
+                <figure class="input-card condition-input" data-demo-card="cameraCondition">
+                  <video class="demo-video" data-demo-media="cameraCondition" src="assets/demos/hitchcock/01/camera_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span class="condition-dot"></span> Camera + zoom <em>GTL only</em></figcaption>
+                </figure>
+                <figure class="input-card condition-input" data-demo-card="bboxCondition">
+                  <video class="demo-video" data-demo-media="bboxCondition" src="assets/demos/hitchcock/01/bbox_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span class="condition-dot"></span> Subject framing <em>GTL only</em></figcaption>
+                </figure>
+              </div>
             </div>
 
-            <div class="condition-panel">
-              <div class="condition-heading">
-                <div><span class="condition-dot"></span> Control signals for <strong>Ours</strong></div>
-                <p>Intrinsic zoom and extrinsic motion remain aligned in the metric camera space.</p>
+            <div class="featured-result">
+              <div class="featured-result-heading">
+                <div><span>Selected result</span><strong data-featured-method>Ours</strong></div>
+                <span data-featured-meta>GTL · VACE-14B</span>
               </div>
-              <div class="condition-grid condition-grid-two">
-                <figure class="condition-card" data-demo-card="cameraCondition">
-                  <video class="demo-video" data-demo-media="cameraCondition" src="assets/demos/hitchcock/01/camera_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-                  <figcaption><span>01</span> Camera + zoom condition</figcaption>
-                </figure>
-                <figure class="condition-card" data-demo-card="bboxCondition">
-                  <video class="demo-video" data-demo-media="bboxCondition" src="assets/demos/hitchcock/01/bbox_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-                  <figcaption><span>02</span> Subject framing condition</figcaption>
-                </figure>
-              </div>
+              <video class="demo-video featured-result-video" data-featured-media="ours" src="assets/demos/hitchcock/01/ours.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+            </div>
+
+            <div class="stage-heading result-rail-heading result-rail-heading-count-1">
+              <span>Result</span>
+            </div>
+            <div class="result-rail result-rail-count-1" aria-label="Hitchcock zoom result methods">
+              <button class="result-thumb is-active" type="button" data-demo-card="ours" data-method-select="ours" data-method-label="Ours" data-method-meta="GTL · VACE-14B" aria-pressed="true">
+                <span class="result-thumb-label"><strong>Ours</strong><em>GTL</em></span>
+                <video class="demo-video result-thumb-video" data-demo-media="ours" src="assets/demos/hitchcock/01/ours.mp4" autoplay loop muted playsinline preload="metadata"></video>
+              </button>
             </div>
           </article>
         </div>

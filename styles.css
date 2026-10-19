@@ -932,7 +932,7 @@ button {
 }
 
 .demo-suite {
-  padding: 110px 0;
+  padding: 72px 0;
   border-top: 1px solid var(--line-light);
 }
 
@@ -940,11 +940,7 @@ button {
   padding-bottom: 0;
 }
 
-.demo-suite[data-demo-category="camera"] {
-  padding-top: 72px;
-}
-
-.demo-suite[data-demo-category="camera"] .suite-heading h3 {
+.demo-suite .suite-heading h3 {
   font-size: clamp(30px, 3.2vw, 46px);
 }
 
@@ -1040,7 +1036,7 @@ button {
   text-align: center;
 }
 
-.demo-suite[data-demo-category="camera"] .case-switcher {
+.demo-suite .case-switcher {
   margin: 28px 0 12px;
 }
 
@@ -1064,6 +1060,22 @@ button {
   width: min(100%, 320px);
   margin: 0 auto 12px;
   padding: 6px;
+}
+
+.input-stage-count-3 {
+  width: min(100%, 470px);
+}
+
+.input-stage-count-4 {
+  width: min(100%, 620px);
+}
+
+.input-stage-count-3 .input-pair {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.input-stage-count-4 .input-pair {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .input-stage-compact .input-stage-heading {
@@ -1235,6 +1247,24 @@ button {
   gap: 7px;
   width: min(100%, 760px);
   margin-inline: auto;
+}
+
+.result-rail-heading-count-2,
+.result-rail-count-2 {
+  width: min(100%, 300px);
+}
+
+.result-rail-count-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.result-rail-heading-count-1,
+.result-rail-count-1 {
+  width: min(100%, 150px);
+}
+
+.result-rail-count-1 {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .result-thumb {
@@ -2090,6 +2120,21 @@ button {
   .input-pair {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 7px;
+  }
+
+  .input-stage-count-3,
+  .input-stage-count-4 {
+    overflow-x: auto;
+  }
+
+  .input-stage-count-3 .input-pair,
+  .input-stage-count-4 .input-pair {
+    width: max-content;
+    grid-template-columns: repeat(3, 110px);
+  }
+
+  .input-stage-count-4 .input-pair {
+    grid-template-columns: repeat(4, 110px);
   }
 
   .input-card {

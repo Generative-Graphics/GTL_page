@@ -286,7 +286,9 @@ const setDemoCase = (suite, index) => {
   });
 
   if (suite.querySelector("[data-featured-media]")) {
-    setFeaturedResult(suite, suite.dataset.featuredMedia || "ours", false);
+    const requestedMethod = suite.dataset.featuredMedia || "ours";
+    const nextMethod = selected.media[requestedMethod] ? requestedMethod : "ours";
+    setFeaturedResult(suite, nextMethod, false);
   }
 };
 
