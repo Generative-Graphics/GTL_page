@@ -136,6 +136,7 @@ const demoCases = {
       base: "assets/demos/camera-object/04",
       media: {
         ours: "ours.mp4",
+        pac: "pac.mp4",
         cameraCondition: "camera_condition.mp4",
         bboxCondition: "bbox_condition.mp4",
       },
@@ -186,6 +187,26 @@ const demoCases = {
     {
       title: "Case 02",
       base: "assets/demos/hitchcock/02",
+      media: {
+        ours: "ours.mp4",
+        cameraCondition: "camera_condition.mp4",
+        bboxCondition: "bbox_condition.mp4",
+      },
+    },
+  ],
+  human: [
+    {
+      title: "Case 01",
+      base: "assets/demos/human/01",
+      media: {
+        ours: "ours.mp4",
+        cameraCondition: "camera_condition.mp4",
+        bboxCondition: "bbox_condition.mp4",
+      },
+    },
+    {
+      title: "Case 02",
+      base: "assets/demos/human/02",
       media: {
         ours: "ours.mp4",
         cameraCondition: "camera_condition.mp4",

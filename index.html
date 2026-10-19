@@ -374,8 +374,8 @@
             <div class="suite-heading">
               <span class="suite-index">02</span>
               <div>
-                <span class="suite-kicker">Camera + object</span>
-                <h3>Separate the actor from the lens.</h3>
+                <span class="suite-kicker">Camera + BBox</span>
+                <h3>Joint camera and object control.</h3>
               </div>
               <p>
                 Joint control keeps camera motion and local object dynamics coherent while
@@ -552,6 +552,64 @@
               <button class="result-thumb is-active" type="button" data-demo-card="ours" data-method-select="ours" data-method-label="Ours" data-method-meta="GTL · VACE-14B" aria-pressed="true">
                 <span class="result-thumb-label"><strong>Ours</strong><em>GTL</em></span>
                 <video class="demo-video result-thumb-video" data-demo-media="ours" src="assets/demos/hitchcock/01/ours.mp4" autoplay loop muted playsinline preload="metadata"></video>
+              </button>
+            </div>
+          </article>
+
+          <article class="demo-suite reveal" data-demo-category="human">
+            <div class="suite-heading">
+              <span class="suite-index">05</span>
+              <div>
+                <span class="suite-kicker">Additional examples</span>
+                <h3>More human scenes.</h3>
+              </div>
+              <p>
+                Additional person-centric scenes with camera and subject controls shown
+                together.
+              </p>
+            </div>
+
+            <nav class="case-switcher case-switcher-primary" aria-label="Additional human scene examples">
+              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true"><span>Case</span> 01</button>
+              <button type="button" data-demo-case="1" aria-pressed="false"><span>Case</span> 02</button>
+            </nav>
+
+            <div class="input-stage input-stage-compact input-stage-count-3">
+              <div class="stage-heading input-stage-heading">
+                <span>Inputs</span>
+                <p>Control signals are provided to GTL only.</p>
+              </div>
+              <div class="input-pair">
+                <figure class="input-card reference-card">
+                  <img data-demo-reference src="assets/demos/human/01/reference.jpg" alt="Reference image for additional human scene example 01" width="1200" height="675">
+                  <figcaption>Reference image</figcaption>
+                </figure>
+                <figure class="input-card condition-input" data-demo-card="cameraCondition">
+                  <video class="demo-video" data-demo-media="cameraCondition" src="assets/demos/human/01/camera_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span class="condition-dot"></span> Camera condition <em>GTL only</em></figcaption>
+                </figure>
+                <figure class="input-card condition-input" data-demo-card="bboxCondition">
+                  <video class="demo-video" data-demo-media="bboxCondition" src="assets/demos/human/01/bbox_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span class="condition-dot"></span> BBox condition <em>GTL only</em></figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div class="featured-result">
+              <div class="featured-result-heading">
+                <div><span>Selected result</span><strong data-featured-method>Ours</strong></div>
+                <span data-featured-meta>GTL · VACE-14B</span>
+              </div>
+              <video class="demo-video featured-result-video" data-featured-media="ours" src="assets/demos/human/01/ours.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+            </div>
+
+            <div class="stage-heading result-rail-heading result-rail-heading-count-1">
+              <span>Result</span>
+            </div>
+            <div class="result-rail result-rail-count-1" aria-label="Additional human scene results">
+              <button class="result-thumb is-active" type="button" data-demo-card="ours" data-method-select="ours" data-method-label="Ours" data-method-meta="GTL · VACE-14B" aria-pressed="true">
+                <span class="result-thumb-label"><strong>Ours</strong><em>GTL</em></span>
+                <video class="demo-video result-thumb-video" data-demo-media="ours" src="assets/demos/human/01/ours.mp4" autoplay loop muted playsinline preload="metadata"></video>
               </button>
             </div>
           </article>
