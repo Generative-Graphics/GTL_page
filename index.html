@@ -308,23 +308,33 @@
               </p>
             </div>
 
-            <nav class="case-switcher" aria-label="Camera motion examples">
-              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true">01 · Tilt down + dolly in</button>
-              <button type="button" data-demo-case="1" aria-pressed="false">02 · Dolly in + orbit</button>
-              <button type="button" data-demo-case="2" aria-pressed="false">03 · Truck + dolly in</button>
+            <nav class="case-switcher case-switcher-primary" aria-label="Camera motion examples">
+              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true"><span>Case</span> 01</button>
+              <button type="button" data-demo-case="1" aria-pressed="false"><span>Case</span> 02</button>
+              <button type="button" data-demo-case="2" aria-pressed="false"><span>Case</span> 03</button>
             </nav>
 
-            <div class="demo-context">
-              <figure class="reference-card">
-                <img data-demo-reference src="assets/demos/camera/01/reference.jpg" alt="Reference image for camera motion example" width="1200" height="675">
-                <figcaption>Reference image</figcaption>
-              </figure>
-              <div class="case-readout">
-                <span>Selected operation</span>
-                <strong data-demo-case-title>Tilt down + dolly in</strong>
+            <div class="input-stage">
+              <div class="stage-heading">
+                <span>Input</span>
+                <p>Camera Condition is provided to GTL only.</p>
+              </div>
+              <div class="input-pair">
+                <figure class="input-card reference-card">
+                  <img data-demo-reference src="assets/demos/camera/01/reference.jpg" alt="Reference image for camera example 01" width="1200" height="675">
+                  <figcaption>Reference image</figcaption>
+                </figure>
+                <figure class="input-card condition-input" data-demo-card="cameraCondition">
+                  <video class="demo-video" data-demo-media="cameraCondition" src="assets/demos/camera/01/camera_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span class="condition-dot"></span> Camera condition <em>GTL only</em></figcaption>
+                </figure>
               </div>
             </div>
 
+            <div class="stage-heading comparison-heading">
+              <span>Method comparison</span>
+              <p>All methods use the same selected reference and requested camera motion.</p>
+            </div>
             <div class="comparison-grid comparison-grid-five">
               <figure class="result-card result-card-ours" data-demo-card="ours">
                 <figcaption class="media-label"><strong>Ours</strong><span>GTL · VACE-14B</span></figcaption>
@@ -347,19 +357,6 @@
                 <video class="demo-video" data-demo-media="gen3c" src="assets/demos/camera/01/gen3c.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
               </figure>
             </div>
-
-            <div class="condition-panel">
-              <div class="condition-heading">
-                <div><span class="condition-dot"></span> Control signals for <strong>Ours</strong></div>
-                <p>These signals condition GTL only; they are not additional comparison methods.</p>
-              </div>
-              <div class="condition-grid condition-grid-one">
-                <figure class="condition-card" data-demo-card="cameraCondition">
-                  <video class="demo-video" data-demo-media="cameraCondition" src="assets/demos/camera/01/camera_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-                  <figcaption><span>01</span> Camera condition</figcaption>
-                </figure>
-              </div>
-            </div>
           </article>
 
           <article class="demo-suite reveal" data-demo-category="cameraObject">
@@ -376,10 +373,10 @@
             </div>
 
             <nav class="case-switcher" aria-label="Camera and object motion examples">
-              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true">01 · Classic car</button>
-              <button type="button" data-demo-case="1" aria-pressed="false">02 · Living-room dog</button>
-              <button type="button" data-demo-case="2" aria-pressed="false">03 · Paper aircraft</button>
-              <button type="button" data-demo-case="3" aria-pressed="false">04 · Street subject</button>
+              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true">Case 01</button>
+              <button type="button" data-demo-case="1" aria-pressed="false">Case 02</button>
+              <button type="button" data-demo-case="2" aria-pressed="false">Case 03</button>
+              <button type="button" data-demo-case="3" aria-pressed="false">Case 04</button>
             </nav>
 
             <div class="demo-context">
@@ -388,8 +385,8 @@
                 <figcaption>Reference image</figcaption>
               </figure>
               <div class="case-readout">
-                <span>Selected operation</span>
-                <strong data-demo-case-title>Classic car</strong>
+                <span>Selected example</span>
+                <strong data-demo-case-title>Case 01</strong>
               </div>
             </div>
 
@@ -436,9 +433,9 @@
             </div>
 
             <nav class="case-switcher" aria-label="Depth-of-field examples">
-              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true">01 · Rack focus</button>
-              <button type="button" data-demo-case="1" aria-pressed="false">02 · Dynamic focus</button>
-              <button type="button" data-demo-case="2" aria-pressed="false">03 · Focus transition</button>
+              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true">Case 01</button>
+              <button type="button" data-demo-case="1" aria-pressed="false">Case 02</button>
+              <button type="button" data-demo-case="2" aria-pressed="false">Case 03</button>
             </nav>
 
             <div class="feature-stage">
@@ -447,7 +444,7 @@
                 <figcaption>Reference image</figcaption>
               </figure>
               <figure class="result-card result-card-ours feature-result" data-demo-card="ours">
-                <figcaption class="media-label"><strong>Ours</strong><span data-demo-case-title>Rack focus</span></figcaption>
+                <figcaption class="media-label"><strong>Ours</strong><span>GTL · VACE-14B</span></figcaption>
                 <video class="demo-video" data-demo-media="ours" src="assets/demos/bokeh/01/ours.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
               </figure>
             </div>
@@ -488,8 +485,8 @@
             </div>
 
             <nav class="case-switcher" aria-label="Hitchcock zoom examples">
-              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true">01 · Reverse dolly zoom</button>
-              <button type="button" data-demo-case="1" aria-pressed="false">02 · Cinematic dolly zoom</button>
+              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true">Case 01</button>
+              <button type="button" data-demo-case="1" aria-pressed="false">Case 02</button>
             </nav>
 
             <div class="feature-stage">
@@ -498,7 +495,7 @@
                 <figcaption>Reference image</figcaption>
               </figure>
               <figure class="result-card result-card-ours feature-result" data-demo-card="ours">
-                <figcaption class="media-label"><strong>Ours</strong><span data-demo-case-title>Reverse dolly zoom</span></figcaption>
+                <figcaption class="media-label"><strong>Ours</strong><span>GTL · VACE-14B</span></figcaption>
                 <video class="demo-video" data-demo-media="ours" src="assets/demos/hitchcock/01/ours.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
               </figure>
             </div>

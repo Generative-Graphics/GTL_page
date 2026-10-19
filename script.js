@@ -64,7 +64,7 @@ copyButton?.addEventListener("click", async () => {
 const demoCases = {
   camera: [
     {
-      title: "Tilt down + dolly in",
+      title: "Case 01",
       base: "assets/demos/camera/01",
       media: {
         ours: "ours.mp4",
@@ -76,7 +76,7 @@ const demoCases = {
       },
     },
     {
-      title: "Dolly in + orbit",
+      title: "Case 02",
       base: "assets/demos/camera/02",
       media: {
         ours: "ours.mp4",
@@ -88,7 +88,7 @@ const demoCases = {
       },
     },
     {
-      title: "Truck + dolly in",
+      title: "Case 03",
       base: "assets/demos/camera/03",
       media: {
         ours: "ours.mp4",
@@ -102,7 +102,7 @@ const demoCases = {
   ],
   cameraObject: [
     {
-      title: "Classic car",
+      title: "Case 01",
       base: "assets/demos/camera-object/01",
       media: {
         ours: "ours.mp4",
@@ -112,7 +112,7 @@ const demoCases = {
       },
     },
     {
-      title: "Living-room dog",
+      title: "Case 02",
       base: "assets/demos/camera-object/02",
       media: {
         ours: "ours.mp4",
@@ -122,7 +122,7 @@ const demoCases = {
       },
     },
     {
-      title: "Paper aircraft",
+      title: "Case 03",
       base: "assets/demos/camera-object/03",
       media: {
         ours: "ours.mp4",
@@ -132,7 +132,7 @@ const demoCases = {
       },
     },
     {
-      title: "Street subject",
+      title: "Case 04",
       base: "assets/demos/camera-object/04",
       media: {
         ours: "ours.mp4",
@@ -143,7 +143,7 @@ const demoCases = {
   ],
   bokeh: [
     {
-      title: "Rack focus",
+      title: "Case 01",
       base: "assets/demos/bokeh/01",
       media: {
         ours: "ours.mp4",
@@ -153,7 +153,7 @@ const demoCases = {
       },
     },
     {
-      title: "Dynamic focus",
+      title: "Case 02",
       base: "assets/demos/bokeh/02",
       media: {
         ours: "ours.mp4",
@@ -163,7 +163,7 @@ const demoCases = {
       },
     },
     {
-      title: "Focus transition",
+      title: "Case 03",
       base: "assets/demos/bokeh/03",
       media: {
         ours: "ours.mp4",
@@ -175,7 +175,7 @@ const demoCases = {
   ],
   hitchcock: [
     {
-      title: "Reverse dolly zoom",
+      title: "Case 01",
       base: "assets/demos/hitchcock/01",
       media: {
         ours: "ours.mp4",
@@ -184,7 +184,7 @@ const demoCases = {
       },
     },
     {
-      title: "Cinematic dolly zoom",
+      title: "Case 02",
       base: "assets/demos/hitchcock/02",
       media: {
         ours: "ours.mp4",

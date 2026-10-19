@@ -1026,6 +1026,109 @@ button {
   background: var(--ink);
 }
 
+.case-switcher-primary button {
+  flex: 1 1 0;
+  padding-block: 20px;
+  text-align: center;
+}
+
+.case-switcher-primary button span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+}
+
+.input-stage {
+  margin-bottom: 30px;
+  padding: 18px;
+  color: white;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.stage-heading {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.stage-heading > span {
+  font-family: "Manrope", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.stage-heading p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 11px;
+}
+
+.input-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.input-card {
+  min-width: 0;
+  margin: 0;
+  padding: 8px;
+  background: #191919;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input-card.reference-card {
+  position: static;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.input-card.reference-card img {
+  display: block;
+  height: auto;
+}
+
+.input-card.reference-card figcaption,
+.condition-input figcaption {
+  position: static;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  min-height: 40px;
+  padding: 10px 3px 2px;
+  color: rgba(255, 255, 255, 0.68);
+  background: transparent;
+  font-family: "Manrope", sans-serif;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.condition-input figcaption em {
+  margin-left: auto;
+  color: var(--lime);
+  font-size: 8px;
+  font-style: normal;
+  letter-spacing: 0.12em;
+}
+
+.comparison-heading {
+  margin: 0 0 14px;
+  padding-top: 2px;
+}
+
+.comparison-heading p {
+  color: rgba(10, 10, 10, 0.46);
+}
+
 .demo-context {
   display: grid;
   grid-template-columns: minmax(180px, 0.32fr) 1fr;
@@ -1100,7 +1203,7 @@ button {
 }
 
 .comparison-grid-five {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .comparison-grid-two {
@@ -1498,7 +1601,7 @@ button {
   }
 
   .comparison-grid-five {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -1793,6 +1896,24 @@ button {
 
   .case-switcher button {
     padding: 13px 15px;
+  }
+
+  .case-switcher-primary button {
+    padding-block: 16px;
+  }
+
+  .stage-heading {
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+  }
+
+  .input-stage {
+    padding: 12px;
+  }
+
+  .input-pair {
+    grid-template-columns: 1fr;
   }
 
   .demo-context {
