@@ -940,6 +940,14 @@ button {
   padding-bottom: 0;
 }
 
+.demo-suite[data-demo-category="camera"] {
+  padding-top: 72px;
+}
+
+.demo-suite[data-demo-category="camera"] .suite-heading h3 {
+  font-size: clamp(30px, 3.2vw, 46px);
+}
+
 .suite-heading {
   display: grid;
   grid-template-columns: 76px minmax(300px, 1.35fr) minmax(260px, 0.8fr);
@@ -1028,8 +1036,12 @@ button {
 
 .case-switcher-primary button {
   flex: 1 1 0;
-  padding-block: 20px;
+  padding-block: 12px;
   text-align: center;
+}
+
+.demo-suite[data-demo-category="camera"] .case-switcher {
+  margin: 28px 0 12px;
 }
 
 .case-switcher-primary button span {
@@ -1049,17 +1061,18 @@ button {
 }
 
 .input-stage-compact {
-  width: min(100%, 540px);
-  margin-bottom: 24px;
-  padding: 12px;
+  width: min(100%, 320px);
+  margin: 0 auto 12px;
+  padding: 6px;
 }
 
 .input-stage-compact .input-stage-heading {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  padding: 0 2px;
 }
 
 .input-stage-compact .input-stage-heading p {
-  font-size: 9px;
+  display: none;
 }
 
 .stage-heading {
@@ -1134,9 +1147,38 @@ button {
   letter-spacing: 0.12em;
 }
 
+.input-stage-compact .input-card,
+.input-stage-compact .input-card.reference-card {
+  position: relative;
+  padding: 3px;
+}
+
+.input-stage-compact .input-card.reference-card figcaption,
+.input-stage-compact .condition-input figcaption {
+  position: absolute;
+  z-index: 1;
+  bottom: 7px;
+  left: 7px;
+  min-height: 0;
+  padding: 4px 6px;
+  color: white;
+  background: rgba(0, 0, 0, 0.76);
+  font-size: 7px;
+}
+
+.input-stage-compact .condition-input figcaption em {
+  display: none;
+}
+
+.input-stage-compact .condition-dot {
+  width: 5px;
+  height: 5px;
+}
+
 .featured-result {
-  margin-bottom: 26px;
-  padding: 12px;
+  width: min(100%, 520px);
+  margin: 0 auto 12px;
+  padding: 7px;
   color: white;
   background: #111;
   border: 1px solid rgba(10, 10, 10, 0.28);
@@ -1147,8 +1189,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 48px;
-  padding: 0 4px 10px;
+  min-height: 35px;
+  padding: 0 4px 6px;
   font-family: "Manrope", sans-serif;
 }
 
@@ -1168,7 +1210,7 @@ button {
 }
 
 .featured-result-heading strong {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
@@ -1179,7 +1221,8 @@ button {
 }
 
 .result-rail-heading {
-  margin-bottom: 12px;
+  width: min(100%, 760px);
+  margin: 0 auto 7px;
 }
 
 .result-rail-heading p {
@@ -1189,12 +1232,14 @@ button {
 .result-rail {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 10px;
+  gap: 7px;
+  width: min(100%, 760px);
+  margin-inline: auto;
 }
 
 .result-thumb {
   min-width: 0;
-  padding: 7px;
+  padding: 4px;
   color: var(--ink);
   background: rgba(255, 255, 255, 0.42);
   border: 1px solid var(--line-light);
@@ -1221,20 +1266,20 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 34px;
-  padding: 0 3px 6px;
+  min-height: 25px;
+  padding: 0 2px 3px;
   font-family: "Manrope", sans-serif;
 }
 
 .result-thumb-label strong {
-  font-size: 9px;
+  font-size: 8px;
   letter-spacing: 0.035em;
   text-transform: uppercase;
 }
 
 .result-thumb-label em {
   color: rgba(10, 10, 10, 0.38);
-  font-size: 7px;
+  font-size: 6px;
   font-style: normal;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -1733,16 +1778,6 @@ button {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .result-rail {
-    display: flex;
-    overflow-x: auto;
-    padding-bottom: 8px;
-    scrollbar-width: thin;
-  }
-
-  .result-thumb {
-    flex: 0 0 230px;
-  }
 }
 
 @media (max-width: 760px) {
@@ -2039,7 +2074,7 @@ button {
   }
 
   .case-switcher-primary button {
-    padding-block: 16px;
+    padding-block: 11px;
   }
 
   .stage-heading {
@@ -2049,7 +2084,7 @@ button {
   }
 
   .input-stage {
-    padding: 12px;
+    padding: 6px;
   }
 
   .input-pair {
@@ -2058,7 +2093,7 @@ button {
   }
 
   .input-card {
-    padding: 5px;
+    padding: 3px;
   }
 
   .input-card.reference-card figcaption,
@@ -2073,16 +2108,23 @@ button {
   }
 
   .featured-result {
-    padding: 7px;
+    width: min(100%, 520px);
   }
 
   .featured-result-heading {
-    min-height: 42px;
-    padding: 0 4px 7px;
+    min-height: 35px;
+    padding: 0 4px 6px;
+  }
+
+  .result-rail {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 7px;
+    scrollbar-width: thin;
   }
 
   .result-thumb {
-    flex-basis: 190px;
+    flex: 0 0 150px;
   }
 
   .demo-context {
