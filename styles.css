@@ -1251,7 +1251,7 @@ button {
   letter-spacing: 0.02em;
 }
 
-.featured-result-protocol small.is-v2v {
+.featured-result-protocol small.is-video-input {
   color: var(--lime);
 }
 
@@ -1360,7 +1360,7 @@ button {
   line-height: 1.2;
 }
 
-.result-input-note-v2v {
+.result-input-note-video {
   color: rgba(10, 10, 10, 0.78);
   font-weight: 700;
 }

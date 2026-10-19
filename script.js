@@ -241,7 +241,7 @@ const setFeaturedResult = (suite, method, syncWithThumbnail = true) => {
   if (methodMeta) methodMeta.textContent = selectedButton.dataset.methodMeta;
   if (methodInput) {
     methodInput.textContent = selectedButton.dataset.methodInput || "";
-    methodInput.classList.toggle("is-v2v", selectedButton.dataset.methodInput === "Video-to-video input");
+    methodInput.classList.toggle("is-video-input", selectedButton.dataset.methodInput === "Original video input");
   }
 
   const thumbnail = selectedButton.querySelector("[data-demo-media]");
