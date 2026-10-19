@@ -290,8 +290,8 @@
             <span class="section-kicker">Interactive results</span>
             <h2>Every control,<br>in the final frame.</h2>
             <p>
-              Compare generated results across methods, then open the GTL control track to see
-              the geometry-aware signals that drive each shot. Click any clip to pause or play.
+              Choose a case, compare methods in the result player, and inspect the GTL-only
+              control tracks alongside each reference.
             </p>
           </div>
 
@@ -314,9 +314,9 @@
               <button type="button" data-demo-case="2" aria-pressed="false"><span>Case</span> 03</button>
             </nav>
 
-            <div class="input-stage">
-              <div class="stage-heading">
-                <span>Input</span>
+            <div class="input-stage input-stage-compact">
+              <div class="stage-heading input-stage-heading">
+                <span>Inputs</span>
                 <p>Camera Condition is provided to GTL only.</p>
               </div>
               <div class="input-pair">
@@ -331,31 +331,42 @@
               </div>
             </div>
 
-            <div class="stage-heading comparison-heading">
-              <span>Method comparison</span>
-              <p>All methods use the same selected reference and requested camera motion.</p>
+            <div class="featured-result">
+              <div class="featured-result-heading">
+                <div>
+                  <span>Selected result</span>
+                  <strong data-featured-method>Ours</strong>
+                </div>
+                <span data-featured-meta>GTL · VACE-14B</span>
+              </div>
+              <video class="demo-video featured-result-video" data-featured-media="ours" src="assets/demos/camera/01/ours.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
             </div>
-            <div class="comparison-grid comparison-grid-five">
-              <figure class="result-card result-card-ours" data-demo-card="ours">
-                <figcaption class="media-label"><strong>Ours</strong><span>GTL · VACE-14B</span></figcaption>
-                <video class="demo-video" data-demo-media="ours" src="assets/demos/camera/01/ours.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-              </figure>
-              <figure class="result-card" data-demo-card="seedance">
-                <figcaption class="media-label"><strong>Seedance</strong><span>Jimeng</span></figcaption>
-                <video class="demo-video" data-demo-media="seedance" src="assets/demos/camera/01/seedance.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-              </figure>
-              <figure class="result-card" data-demo-card="camclone">
-                <figcaption class="media-label"><strong>CamClone</strong><span>Baseline</span></figcaption>
-                <video class="demo-video" data-demo-media="camclone" src="assets/demos/camera/01/camclone.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-              </figure>
-              <figure class="result-card" data-demo-card="realcam">
-                <figcaption class="media-label"><strong>RealCam-I2V</strong><span>Baseline</span></figcaption>
-                <video class="demo-video" data-demo-media="realcam" src="assets/demos/camera/01/realcam_i2v.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-              </figure>
-              <figure class="result-card" data-demo-card="gen3c">
-                <figcaption class="media-label"><strong>GEN3C</strong><span>Baseline</span></figcaption>
-                <video class="demo-video" data-demo-media="gen3c" src="assets/demos/camera/01/gen3c.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
-              </figure>
+
+            <div class="stage-heading result-rail-heading">
+              <span>All methods</span>
+              <p>Select a playing result to bring it to the main screen.</p>
+            </div>
+            <div class="result-rail" aria-label="Camera result methods">
+              <button class="result-thumb is-active" type="button" data-demo-card="ours" data-method-select="ours" data-method-label="Ours" data-method-meta="GTL · VACE-14B" aria-pressed="true">
+                <span class="result-thumb-label"><strong>Ours</strong><em>GTL</em></span>
+                <video class="demo-video result-thumb-video" data-demo-media="ours" src="assets/demos/camera/01/ours.mp4" autoplay loop muted playsinline preload="metadata"></video>
+              </button>
+              <button class="result-thumb" type="button" data-demo-card="seedance" data-method-select="seedance" data-method-label="Seedance" data-method-meta="Jimeng" aria-pressed="false">
+                <span class="result-thumb-label"><strong>Seedance</strong><em>Jimeng</em></span>
+                <video class="demo-video result-thumb-video" data-demo-media="seedance" src="assets/demos/camera/01/seedance.mp4" autoplay loop muted playsinline preload="metadata"></video>
+              </button>
+              <button class="result-thumb" type="button" data-demo-card="camclone" data-method-select="camclone" data-method-label="CamClone" data-method-meta="Baseline" aria-pressed="false">
+                <span class="result-thumb-label"><strong>CamClone</strong><em>Baseline</em></span>
+                <video class="demo-video result-thumb-video" data-demo-media="camclone" src="assets/demos/camera/01/camclone.mp4" autoplay loop muted playsinline preload="metadata"></video>
+              </button>
+              <button class="result-thumb" type="button" data-demo-card="realcam" data-method-select="realcam" data-method-label="RealCam-I2V" data-method-meta="Baseline" aria-pressed="false">
+                <span class="result-thumb-label"><strong>RealCam-I2V</strong><em>Baseline</em></span>
+                <video class="demo-video result-thumb-video" data-demo-media="realcam" src="assets/demos/camera/01/realcam_i2v.mp4" autoplay loop muted playsinline preload="metadata"></video>
+              </button>
+              <button class="result-thumb" type="button" data-demo-card="gen3c" data-method-select="gen3c" data-method-label="GEN3C" data-method-meta="Baseline" aria-pressed="false">
+                <span class="result-thumb-label"><strong>GEN3C</strong><em>Baseline</em></span>
+                <video class="demo-video result-thumb-video" data-demo-media="gen3c" src="assets/demos/camera/01/gen3c.mp4" autoplay loop muted playsinline preload="metadata"></video>
+              </button>
             </div>
           </article>
 

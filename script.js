@@ -195,10 +195,57 @@ const demoCases = {
   ],
 };
 
+const setFeaturedResult = (suite, method, syncWithThumbnail = true) => {
+  const category = suite.dataset.demoCategory;
+  const caseIndex = Number(suite.dataset.demoIndex || 0);
+  const selectedCase = demoCases[category]?.[caseIndex];
+  const filename = selectedCase?.media[method];
+  const featuredVideo = suite.querySelector("[data-featured-media]");
+  const selectedButton = suite.querySelector(`[data-method-select="${method}"]`);
+  if (!filename || !featuredVideo || !selectedButton) return;
+
+  suite.dataset.featuredMedia = method;
+  featuredVideo.dataset.featuredMedia = method;
+
+  suite.querySelectorAll("[data-method-select]").forEach((button) => {
+    const isActive = button.dataset.methodSelect === method;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+
+  const methodLabel = suite.querySelector("[data-featured-method]");
+  const methodMeta = suite.querySelector("[data-featured-meta]");
+  if (methodLabel) methodLabel.textContent = selectedButton.dataset.methodLabel;
+  if (methodMeta) methodMeta.textContent = selectedButton.dataset.methodMeta;
+
+  const thumbnail = selectedButton.querySelector("[data-demo-media]");
+  const resumeAt = syncWithThumbnail ? thumbnail?.currentTime || 0 : 0;
+  const nextSource = `${selectedCase.base}/${filename}`;
+
+  const playFeatured = () => {
+    if (resumeAt > 0 && Number.isFinite(featuredVideo.duration)) {
+      featuredVideo.currentTime = Math.min(resumeAt, Math.max(0, featuredVideo.duration - 0.05));
+    }
+    delete featuredVideo.dataset.userPaused;
+    featuredVideo.classList.remove("is-paused");
+    featuredVideo.play().catch(() => {});
+  };
+
+  if (featuredVideo.getAttribute("src") !== nextSource) {
+    featuredVideo.addEventListener("loadedmetadata", playFeatured, { once: true });
+    featuredVideo.src = nextSource;
+    featuredVideo.load();
+  } else {
+    playFeatured();
+  }
+};
+
 const setDemoCase = (suite, index) => {
   const category = suite.dataset.demoCategory;
   const selected = demoCases[category]?.[index];
   if (!selected) return;
+
+  suite.dataset.demoIndex = String(index);
 
   suite.querySelectorAll("[data-demo-case]").forEach((button) => {
     const isActive = Number(button.dataset.demoCase) === index;
@@ -237,18 +284,32 @@ const setDemoCase = (suite, index) => {
     video.classList.remove("is-paused");
     video.play().catch(() => {});
   });
+
+  if (suite.querySelector("[data-featured-media]")) {
+    setFeaturedResult(suite, suite.dataset.featuredMedia || "ours", false);
+  }
 };
 
 document.querySelectorAll(".demo-suite[data-demo-category]").forEach((suite) => {
+  suite.dataset.demoIndex = suite.dataset.demoIndex || "0";
+
   suite.querySelectorAll("[data-demo-case]").forEach((button) => {
     button.addEventListener("click", () => {
       setDemoCase(suite, Number(button.dataset.demoCase));
+    });
+  });
+
+  suite.querySelectorAll("[data-method-select]").forEach((button) => {
+    button.addEventListener("click", () => {
+      setFeaturedResult(suite, button.dataset.methodSelect);
     });
   });
 });
 
 document.querySelectorAll(".demo-video").forEach((video) => {
   video.addEventListener("click", () => {
+    if (video.classList.contains("result-thumb-video")) return;
+
     if (video.paused) {
       delete video.dataset.userPaused;
       video.classList.remove("is-paused");
