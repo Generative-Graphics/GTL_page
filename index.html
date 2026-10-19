@@ -47,7 +47,7 @@
         <a href="#overview">Overview</a>
         <a href="#method">Method</a>
         <a href="#video">Video</a>
-        <a href="#cases">Cases</a>
+        <a href="#results">Results</a>
         <a href="#citation">Citation</a>
       </nav>
 
@@ -284,87 +284,242 @@
         </div>
       </section>
 
-      <section class="cases section-warm" id="cases">
+      <section class="results section-warm" id="results">
         <div class="shell">
-          <div class="cases-title reveal">
-            <span class="section-kicker">Case studies</span>
-            <h2>A control room for<br>cinematic generation.</h2>
-            <p>Dedicated case videos will be added here as the final media is prepared.</p>
+          <div class="results-title reveal">
+            <span class="section-kicker">Interactive results</span>
+            <h2>Every control,<br>in the final frame.</h2>
+            <p>
+              Compare generated results across methods, then open the GTL control track to see
+              the geometry-aware signals that drive each shot. Click any clip to pause or play.
+            </p>
           </div>
 
-          <div class="case-grid">
-            <!-- Replace each placeholder with its corresponding <video> element. -->
-            <article class="case-card reveal">
-              <div class="case-video" role="img" aria-label="Camera motion case video placeholder">
-                <span class="case-number">01</span>
-                <span class="case-crosshair" aria-hidden="true"></span>
-                <span class="case-status">Video coming soon</span>
+          <article class="demo-suite reveal" data-demo-category="camera">
+            <div class="suite-heading">
+              <span class="suite-index">01</span>
+              <div>
+                <span class="suite-kicker">Camera motion</span>
+                <h3>Direct the virtual camera.</h3>
               </div>
-              <div class="case-copy">
-                <h3>Camera motion</h3>
-                <p>Metric-scale translation and rotation with stable scene geometry.</p>
-              </div>
-            </article>
+              <p>
+                Metric-scale translation and rotation from a single image, compared with
+                camera-controllable video baselines.
+              </p>
+            </div>
 
-            <article class="case-card reveal">
-              <div class="case-video" role="img" aria-label="Object motion case video placeholder">
-                <span class="case-number">02</span>
-                <span class="case-cube" aria-hidden="true"></span>
-                <span class="case-status">Video coming soon</span>
-              </div>
-              <div class="case-copy">
-                <h3>Object motion</h3>
-                <p>Independent control over 3D translation, rotation, and framing.</p>
-              </div>
-            </article>
+            <nav class="case-switcher" aria-label="Camera motion examples">
+              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true">01 · Tilt down + dolly in</button>
+              <button type="button" data-demo-case="1" aria-pressed="false">02 · Dolly in + orbit</button>
+              <button type="button" data-demo-case="2" aria-pressed="false">03 · Truck + dolly in</button>
+            </nav>
 
-            <article class="case-card reveal">
-              <div class="case-video" role="img" aria-label="Focus pulling case video placeholder">
-                <span class="case-number">03</span>
-                <span class="case-aperture" aria-hidden="true"></span>
-                <span class="case-status">Video coming soon</span>
+            <div class="demo-context">
+              <figure class="reference-card">
+                <img data-demo-reference src="assets/demos/camera/01/reference.jpg" alt="Reference image for camera motion example" width="1200" height="675">
+                <figcaption>Reference image</figcaption>
+              </figure>
+              <div class="case-readout">
+                <span>Selected operation</span>
+                <strong data-demo-case-title>Tilt down + dolly in</strong>
               </div>
-              <div class="case-copy">
-                <h3>Focus pulling</h3>
-                <p>Time-varying focal planes and controllable depth-of-field effects.</p>
-              </div>
-            </article>
+            </div>
 
-            <article class="case-card reveal">
-              <div class="case-video" role="img" aria-label="Hitchcock zoom case video placeholder">
-                <span class="case-number">04</span>
-                <span class="case-zoom" aria-hidden="true"></span>
-                <span class="case-status">Video coming soon</span>
-              </div>
-              <div class="case-copy">
-                <h3>Hitchcock zoom</h3>
-                <p>Coupled camera translation and focal-length changes in a single shot.</p>
-              </div>
-            </article>
-          </div>
+            <div class="comparison-grid comparison-grid-five">
+              <figure class="result-card result-card-ours" data-demo-card="ours">
+                <figcaption class="media-label"><strong>Ours</strong><span>GTL · VACE-14B</span></figcaption>
+                <video class="demo-video" data-demo-media="ours" src="assets/demos/camera/01/ours.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+              </figure>
+              <figure class="result-card" data-demo-card="seedance">
+                <figcaption class="media-label"><strong>Seedance</strong><span>Jimeng</span></figcaption>
+                <video class="demo-video" data-demo-media="seedance" src="assets/demos/camera/01/seedance.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+              </figure>
+              <figure class="result-card" data-demo-card="camclone">
+                <figcaption class="media-label"><strong>CamClone</strong><span>Baseline</span></figcaption>
+                <video class="demo-video" data-demo-media="camclone" src="assets/demos/camera/01/camclone.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+              </figure>
+              <figure class="result-card" data-demo-card="realcam">
+                <figcaption class="media-label"><strong>RealCam-I2V</strong><span>Baseline</span></figcaption>
+                <video class="demo-video" data-demo-media="realcam" src="assets/demos/camera/01/realcam_i2v.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+              </figure>
+              <figure class="result-card" data-demo-card="gen3c">
+                <figcaption class="media-label"><strong>GEN3C</strong><span>Baseline</span></figcaption>
+                <video class="demo-video" data-demo-media="gen3c" src="assets/demos/camera/01/gen3c.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+              </figure>
+            </div>
 
-          <div class="application-gallery">
-            <figure class="application-figure reveal">
-              <div class="application-label">Depth-of-field control</div>
-              <img
-                src="assets/images/bmvc3.png"
-                alt="Examples of controllable depth-of-field and bokeh."
-                width="1630"
-                height="520"
-                loading="lazy"
-              >
-            </figure>
-            <figure class="application-figure reveal">
-              <div class="application-label">Hitchcock zoom</div>
-              <img
-                src="assets/images/bmvc4.png"
-                alt="Example of the Hitchcock zoom synthesized by the model."
-                width="1630"
-                height="426"
-                loading="lazy"
-              >
-            </figure>
-          </div>
+            <div class="condition-panel">
+              <div class="condition-heading">
+                <div><span class="condition-dot"></span> Control signals for <strong>Ours</strong></div>
+                <p>These signals condition GTL only; they are not additional comparison methods.</p>
+              </div>
+              <div class="condition-grid condition-grid-one">
+                <figure class="condition-card" data-demo-card="cameraCondition">
+                  <video class="demo-video" data-demo-media="cameraCondition" src="assets/demos/camera/01/camera_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span>01</span> Camera condition</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+
+          <article class="demo-suite reveal" data-demo-category="cameraObject">
+            <div class="suite-heading">
+              <span class="suite-index">02</span>
+              <div>
+                <span class="suite-kicker">Camera + object</span>
+                <h3>Separate the actor from the lens.</h3>
+              </div>
+              <p>
+                Joint control keeps camera motion and local object dynamics coherent while
+                preserving their independent 3D intent.
+              </p>
+            </div>
+
+            <nav class="case-switcher" aria-label="Camera and object motion examples">
+              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true">01 · Classic car</button>
+              <button type="button" data-demo-case="1" aria-pressed="false">02 · Living-room dog</button>
+              <button type="button" data-demo-case="2" aria-pressed="false">03 · Paper aircraft</button>
+              <button type="button" data-demo-case="3" aria-pressed="false">04 · Street subject</button>
+            </nav>
+
+            <div class="demo-context">
+              <figure class="reference-card">
+                <img data-demo-reference src="assets/demos/camera-object/01/reference.jpg" alt="Reference image for camera and object motion example" width="1200" height="675">
+                <figcaption>Reference image</figcaption>
+              </figure>
+              <div class="case-readout">
+                <span>Selected operation</span>
+                <strong data-demo-case-title>Classic car</strong>
+              </div>
+            </div>
+
+            <div class="comparison-grid comparison-grid-two">
+              <figure class="result-card result-card-ours" data-demo-card="ours">
+                <figcaption class="media-label"><strong>Ours</strong><span>GTL · VACE-14B</span></figcaption>
+                <video class="demo-video" data-demo-media="ours" src="assets/demos/camera-object/01/ours.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+              </figure>
+              <figure class="result-card" data-demo-card="pac">
+                <figcaption class="media-label"><strong>PAC</strong><span>Baseline</span></figcaption>
+                <video class="demo-video" data-demo-media="pac" src="assets/demos/camera-object/01/pac.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+              </figure>
+            </div>
+
+            <div class="condition-panel">
+              <div class="condition-heading">
+                <div><span class="condition-dot"></span> Control signals for <strong>Ours</strong></div>
+                <p>World-space camera geometry and object-space 6D boxes are fused by GTL.</p>
+              </div>
+              <div class="condition-grid condition-grid-two">
+                <figure class="condition-card" data-demo-card="cameraCondition">
+                  <video class="demo-video" data-demo-media="cameraCondition" src="assets/demos/camera-object/01/camera_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span>01</span> Camera condition</figcaption>
+                </figure>
+                <figure class="condition-card" data-demo-card="bboxCondition">
+                  <video class="demo-video" data-demo-media="bboxCondition" src="assets/demos/camera-object/01/bbox_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span>02</span> BBox condition</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+
+          <article class="demo-suite reveal" data-demo-category="bokeh">
+            <div class="suite-heading">
+              <span class="suite-index">03</span>
+              <div>
+                <span class="suite-kicker">Depth of field</span>
+                <h3>Pull focus through the scene.</h3>
+              </div>
+              <p>
+                Explicit, time-varying focus depth supports rack focus and stable bokeh under
+                simultaneous camera and object motion.
+              </p>
+            </div>
+
+            <nav class="case-switcher" aria-label="Depth-of-field examples">
+              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true">01 · Rack focus</button>
+              <button type="button" data-demo-case="1" aria-pressed="false">02 · Dynamic focus</button>
+              <button type="button" data-demo-case="2" aria-pressed="false">03 · Focus transition</button>
+            </nav>
+
+            <div class="feature-stage">
+              <figure class="reference-card">
+                <img data-demo-reference src="assets/demos/bokeh/01/reference.jpg" alt="Reference image for depth-of-field example" width="1200" height="675">
+                <figcaption>Reference image</figcaption>
+              </figure>
+              <figure class="result-card result-card-ours feature-result" data-demo-card="ours">
+                <figcaption class="media-label"><strong>Ours</strong><span data-demo-case-title>Rack focus</span></figcaption>
+                <video class="demo-video" data-demo-media="ours" src="assets/demos/bokeh/01/ours.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+              </figure>
+            </div>
+
+            <div class="condition-panel">
+              <div class="condition-heading">
+                <div><span class="condition-dot"></span> Control signals for <strong>Ours</strong></div>
+                <p>Focus is conditioned together with the camera and target geometry.</p>
+              </div>
+              <div class="condition-grid condition-grid-three">
+                <figure class="condition-card" data-demo-card="cameraCondition">
+                  <video class="demo-video" data-demo-media="cameraCondition" src="assets/demos/bokeh/01/camera_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span>01</span> Camera condition</figcaption>
+                </figure>
+                <figure class="condition-card" data-demo-card="bboxCondition">
+                  <video class="demo-video" data-demo-media="bboxCondition" src="assets/demos/bokeh/01/bbox_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span>02</span> BBox condition</figcaption>
+                </figure>
+                <figure class="condition-card condition-card-accent" data-demo-card="bokehCondition">
+                  <video class="demo-video" data-demo-media="bokehCondition" src="assets/demos/bokeh/01/bokeh_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span>03</span> Bokeh condition</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+
+          <article class="demo-suite reveal" data-demo-category="hitchcock">
+            <div class="suite-heading">
+              <span class="suite-index">04</span>
+              <div>
+                <span class="suite-kicker">Hitchcock zoom</span>
+                <h3>Change perspective, hold the subject.</h3>
+              </div>
+              <p>
+                Camera translation and focal-length variation move in opposite directions,
+                preserving subject scale while the background perspective changes.
+              </p>
+            </div>
+
+            <nav class="case-switcher" aria-label="Hitchcock zoom examples">
+              <button class="is-active" type="button" data-demo-case="0" aria-pressed="true">01 · Reverse dolly zoom</button>
+              <button type="button" data-demo-case="1" aria-pressed="false">02 · Cinematic dolly zoom</button>
+            </nav>
+
+            <div class="feature-stage">
+              <figure class="reference-card">
+                <img data-demo-reference src="assets/demos/hitchcock/01/reference.jpg" alt="Reference image for Hitchcock zoom example" width="1200" height="675">
+                <figcaption>Reference image</figcaption>
+              </figure>
+              <figure class="result-card result-card-ours feature-result" data-demo-card="ours">
+                <figcaption class="media-label"><strong>Ours</strong><span data-demo-case-title>Reverse dolly zoom</span></figcaption>
+                <video class="demo-video" data-demo-media="ours" src="assets/demos/hitchcock/01/ours.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+              </figure>
+            </div>
+
+            <div class="condition-panel">
+              <div class="condition-heading">
+                <div><span class="condition-dot"></span> Control signals for <strong>Ours</strong></div>
+                <p>Intrinsic zoom and extrinsic motion remain aligned in the metric camera space.</p>
+              </div>
+              <div class="condition-grid condition-grid-two">
+                <figure class="condition-card" data-demo-card="cameraCondition">
+                  <video class="demo-video" data-demo-media="cameraCondition" src="assets/demos/hitchcock/01/camera_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span>01</span> Camera + zoom condition</figcaption>
+                </figure>
+                <figure class="condition-card" data-demo-card="bboxCondition">
+                  <video class="demo-video" data-demo-media="bboxCondition" src="assets/demos/hitchcock/01/bbox_condition.mp4" autoplay loop muted playsinline preload="metadata" title="Click to pause or play"></video>
+                  <figcaption><span>02</span> Subject framing condition</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
