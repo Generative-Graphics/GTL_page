@@ -433,6 +433,15 @@ button {
   border-color: rgba(255, 255, 255, 0.35);
 }
 
+.button-disabled,
+.button-disabled:hover {
+  color: rgba(255, 255, 255, 0.48);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.16);
+  cursor: default;
+  transform: none;
+}
+
 .hero-visual {
   position: relative;
   z-index: 3;
@@ -1774,6 +1783,11 @@ button {
 
 .footer-links a:hover {
   color: white;
+}
+
+.footer-link-disabled {
+  color: rgba(255, 255, 255, 0.34);
+  cursor: default;
 }
 
 .footer-meta {
