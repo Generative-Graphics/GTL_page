@@ -1229,6 +1229,32 @@ button {
   letter-spacing: -0.02em;
 }
 
+.featured-result-heading > .featured-result-protocol {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-end;
+}
+
+.featured-result-protocol > span {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.featured-result-protocol small {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.featured-result-protocol small.is-v2v {
+  color: var(--lime);
+}
+
 .featured-result-video {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -1320,6 +1346,27 @@ button {
 
 .result-thumb.is-active .result-thumb-label em {
   color: var(--lime);
+}
+
+.result-input-note {
+  display: block;
+  min-height: 17px;
+  padding: 0 2px 5px;
+  color: rgba(10, 10, 10, 0.48);
+  font-family: "Manrope", sans-serif;
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.result-input-note-v2v {
+  color: rgba(10, 10, 10, 0.78);
+  font-weight: 700;
+}
+
+.result-thumb.is-active .result-input-note {
+  color: rgba(255, 255, 255, 0.66);
 }
 
 .result-thumb-video {

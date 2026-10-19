@@ -236,8 +236,13 @@ const setFeaturedResult = (suite, method, syncWithThumbnail = true) => {
 
   const methodLabel = suite.querySelector("[data-featured-method]");
   const methodMeta = suite.querySelector("[data-featured-meta]");
+  const methodInput = suite.querySelector("[data-featured-input]");
   if (methodLabel) methodLabel.textContent = selectedButton.dataset.methodLabel;
   if (methodMeta) methodMeta.textContent = selectedButton.dataset.methodMeta;
+  if (methodInput) {
+    methodInput.textContent = selectedButton.dataset.methodInput || "";
+    methodInput.classList.toggle("is-v2v", selectedButton.dataset.methodInput === "Video-to-video input");
+  }
 
   const thumbnail = selectedButton.querySelector("[data-demo-media]");
   const resumeAt = syncWithThumbnail ? thumbnail?.currentTime || 0 : 0;
